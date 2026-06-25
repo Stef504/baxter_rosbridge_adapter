@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>baxter_ik</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="theengineroom1@todo.todo">theengineroom1</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- Message types are referenced as rosbridge type strings (roslibpy),
+       not imported in Python, but kept for documentation / rosdep. -->
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>baxter_core_msgs</exec_depend>
+
+  <!-- Actual Python runtime dependencies -->
+  <exec_depend>python3-roslibpy</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
+  <!-- NOTE: daimon_sensor.py / material_classification.py / neural_network.py
+       additionally require PyTorch (`pip install torch`) and the proprietary
+       Daimon SDK `dmrobotics`, which have no rosdep keys. Install them
+       manually; the other nodes (ik_baxter, position_kinematics,
+       repetitive_ik, test) only need roslibpy. -->
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
